@@ -7,8 +7,8 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
-      forbidNonWhitelisted: true,
-      transform: true,
+      forbidNonWhitelisted: true, // request 자체를 금지
+      transform: true, // request를 원하는 실제 타입으로 변환
     }),
   );
   await app.listen(3000);
